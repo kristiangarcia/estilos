@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function App() {
   return (
-    <View>
+    <View style={{ marginTop:200, marginLeft: 100}}>
       <View>
         <Text>Botón 1</Text>
       </View>
