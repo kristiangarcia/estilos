@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function App() {
   return (
-    <View style={{ marginTop:200, marginLeft: 100}}>
+    <View style={styles.contenedor}>
       <View>
         <Text>Botón 1</Text>
       </View>
@@ -23,4 +23,9 @@ export default function App() {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  contenedor:{
+    marginTop:200,
+    marginLeft: 100
+  }
+})
