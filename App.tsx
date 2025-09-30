@@ -3,6 +3,7 @@ import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
 import { MaterialIcons } from '@expo/vector-icons'
 import { useFonts } from 'expo-font'
+import globalStyles from './styles/GlobalStyles'
 
 export default function App() {
   useFonts({
@@ -49,11 +50,7 @@ const styles = StyleSheet.create({
     fontSize:20
   },
   boton1:{
-    // propiedades comunes a todos los botones
-    width:200,
-    height:50,
-    marginBottom:80,
-    // propiedades específicas del botón 1
+    ...globalStyles.botonGenerico,
     backgroundColor:'#e7e3f2',
     borderColor:'#ef1438',
     borderStyle:'solid',
@@ -61,9 +58,7 @@ const styles = StyleSheet.create({
     borderRadius:15
   },
   boton2:{
-    width:200,
-    height:50,
-    marginBottom:80,
+    ...globalStyles.botonGenerico,
     backgroundColor:'#ffd067',
     shadowColor: "#000",
     shadowOffset: {
@@ -72,26 +67,20 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.32,
     shadowRadius: 5.46,
-
     elevation: 9,
   },
   boton3:{
-    width:200,
-    height:50,
-    marginBottom:80,
-    borderRadius:20
+    ...globalStyles.botonGenerico,
+    borderRadius:30
   },
   boton4:{
-    width:200,
-    height:50,
-    marginBottom:80,
+    ...globalStyles.botonGenerico,
     backgroundColor:'#4d83f5',
     borderRadius:10
   },
   boton5:{
-    width:200,
+    ...globalStyles.botonGenerico,
     height:200,
-    marginBottom:80,
     backgroundColor:'#f25d79',
     borderRadius:'50%'
   },
