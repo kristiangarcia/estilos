@@ -1,7 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { LinearGradient } from 'expo-linear-gradient'
+import { MaterialIcons } from '@expo/vector-icons'
+import { useFonts } from 'expo-font'
 
 export default function App() {
+  useFonts({
+    "StoryScript": require("./assets/StoryScript-Regular.ttf")
+  })
   return (
     <View style={styles.contenedor}>
       <View style={styles.boton1}>
@@ -10,14 +16,24 @@ export default function App() {
       <View style={styles.boton2}>
         <Text style={styles.texto}>Botón 2</Text>
       </View>
-      <View style={styles.boton3}>
-        <Text style={styles.texto}>Botón 3</Text>
+      <View>
+        <LinearGradient
+          colors={['#01C7A0', '#40F680']}
+          start={{x: 0.93, y: 0.75}}
+          end={{x: 0.07, y: 0.25}}
+          style={styles.boton3}
+        >
+          <Text style={styles.texto}>Botón 3</Text>
+        </LinearGradient>
       </View>
       <View style={styles.boton4}>
-        <Text style={styles.texto}>Botón 4</Text>
+        <Text style={styles.texto}>
+          Botón 4 {" "}
+          <MaterialIcons name={"download"} size={24} color={"white"} />
+        </Text>
       </View>
       <View style={styles.boton5}>
-        <Text style={styles.texto}>Botón 5</Text>
+        <Text style={styles.texto5}>Botón 5</Text>
       </View>
     </View>
   )
@@ -29,17 +45,59 @@ const styles = StyleSheet.create({
     marginLeft: 100
   },
   texto:{
-    margin:"auto",
+    margin:'auto',
     fontSize:20
   },
   boton1:{
+    // propiedades comunes a todos los botones
+    width:200,
+    height:50,
+    marginBottom:80,
+    // propiedades específicas del botón 1
+    backgroundColor:'#e7e3f2',
+    borderColor:'#ef1438',
+    borderStyle:'solid',
+    borderWidth:3,
+    borderRadius:15
   },
   boton2:{
+    width:200,
+    height:50,
+    marginBottom:80,
+    backgroundColor:'#ffd067',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.32,
+    shadowRadius: 5.46,
+
+    elevation: 9,
   },
   boton3:{
+    width:200,
+    height:50,
+    marginBottom:80,
+    borderRadius:20
   },
   boton4:{
+    width:200,
+    height:50,
+    marginBottom:80,
+    backgroundColor:'#4d83f5',
+    borderRadius:10
   },
   boton5:{
+    width:200,
+    height:200,
+    marginBottom:80,
+    backgroundColor:'#f25d79',
+    borderRadius:'50%'
+  },
+  texto5:{
+    fontFamily:'StoryScript',
+    fontSize:50,
+    margin:'auto'
   }
 })
