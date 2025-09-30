@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { MaterialIcons } from '@expo/vector-icons'
 import { useFonts } from 'expo-font'
 import globalStyles from './styles/GlobalStyles'
+import * as Device from 'expo-device'
 
 export default function App() {
   useFonts({
@@ -42,8 +43,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   contenedor:{
-    marginTop:200,
-    marginLeft: 100
+    marginTop: Device.deviceType === Device.DeviceType.TABLET ? 30 : 200,
+    marginLeft: Platform.select({
+      android: 100,
+      ios: 200,
+      web: 500,
+      default: 150
+    })
   },
   texto:{
     margin:'auto',
